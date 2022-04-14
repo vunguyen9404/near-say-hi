@@ -16,7 +16,6 @@ export default function App() {
   const getTopMessages = async () => {
     try {
       let messages = await window.contract.get_top_message();
-      console.log("Top message: ", messages);
       let sorted = messages.sort((a, b) => b.created_at_block - a.created_at_block)
       setTopMessages(sorted);
     } catch (e) {
